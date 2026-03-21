@@ -1,3 +1,6 @@
+""" Takes player names as input, Running the game
+and and handle errors """
+
 from moneypoly.game import Game
 
 
