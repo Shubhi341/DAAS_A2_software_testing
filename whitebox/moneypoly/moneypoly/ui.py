@@ -1,3 +1,5 @@
+""" This is taking the user input and handling the printing statements of game information. """
+
 def print_banner(title):
     """Print a decorated section header."""
     width = 52
