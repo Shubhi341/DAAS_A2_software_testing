@@ -5,6 +5,7 @@ from moneypoly.game import Game
 
 
 def get_player_names():
+    """ Takes the input of player names and returs list of names. """
     print("Enter player names separated by commas (minimum 2 players):")
     raw = input("> ").strip()
     names = [n.strip() for n in raw.split(",") if n.strip()]
