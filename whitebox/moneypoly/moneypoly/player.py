@@ -2,6 +2,7 @@
 
 
 #import sys
+
 from moneypoly.config import STARTING_BALANCE, BOARD_SIZE, GO_SALARY, JAIL_POSITION
 
 # pylint: disable=too-many-instance-attributes
