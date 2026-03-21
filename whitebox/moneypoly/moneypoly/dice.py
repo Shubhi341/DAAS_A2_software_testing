@@ -1,3 +1,7 @@
+""" This module simulates dice rolling in the game.
+it handles doubles, sums,
+ and Return a human-readable string describing the last roll. """
+
 import random
 from moneypoly.config import BOARD_SIZE
 
