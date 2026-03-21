@@ -1,4 +1,6 @@
-
+""" This module controls the whole game logic,
+including turns, movement, properties, bank, cards,
+and finding the winner"""
 
 import os
 
@@ -468,4 +470,3 @@ class Game:
             f"  Cash to receive from {partner.name}: $", default=0
         )
         self.trade(player, partner, chosen_prop, cash)
-        
