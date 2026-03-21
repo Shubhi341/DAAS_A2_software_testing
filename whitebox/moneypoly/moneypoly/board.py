@@ -1,3 +1,6 @@
+""" This module represents the game board and it defines the properties,
+their groups, and the special tiles. """
+
 from moneypoly.property import Property, PropertyGroup
 from moneypoly.config import (
     JAIL_POSITION,
