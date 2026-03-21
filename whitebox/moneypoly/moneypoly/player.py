@@ -1,7 +1,7 @@
 """ This module represents a player in the game and manages everything related to that player. """
 
 
-import sys
+#import sys
 from moneypoly.config import STARTING_BALANCE, BOARD_SIZE, GO_SALARY, JAIL_POSITION
 
 # pylint: disable=too-many-instance-attributes
