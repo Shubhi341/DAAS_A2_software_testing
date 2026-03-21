@@ -3,7 +3,7 @@ it handles doubles, sums,
  and Return a human-readable string describing the last roll. """
 
 import random
-from moneypoly.config import BOARD_SIZE
+#from moneypoly.config import BOARD_SIZE
 
 class Dice:
     """Simulates a pair of six-sided dice with consecutive-doubles tracking."""
