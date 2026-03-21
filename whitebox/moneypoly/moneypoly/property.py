@@ -1,3 +1,6 @@
+"""This module manages properties which can be bought, their rents, ownership, mortgages, and color groups in the game. """
+
+
 class Property:
     """Represents a single purchasable property tile on the MoneyPoly board."""
 
