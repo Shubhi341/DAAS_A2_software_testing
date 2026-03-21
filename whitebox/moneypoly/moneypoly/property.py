@@ -1,22 +1,21 @@
-"""This module manages properties which can be bought,
-their rents, ownership, mortgages
-, and color groups in the game. """
+"""This module manages properties which can be bought
+, their rents, ownership, mortgages,
+and color groups in the game. """
 
-
+# pylint: disable=too-many-instance-attributes
 class Property:
     """Represents a single purchasable property tile on the MoneyPoly board."""
 
     FULL_GROUP_MULTIPLIER = 2
-
     def __init__(self, name, position, price, base_rent, group=None):
         self.name = name
         self.position = position
         self.price = price
         self.base_rent = base_rent
-        #self.mortgage_value = price // 2
+        self.mortgage_value = price // 2
         self.owner = None
         self.is_mortgaged = False
-        #self.houses = 0
+        self.houses = 0
 
         # Register with the group immediately on creation
         self.group = group
@@ -43,7 +42,7 @@ class Property:
         if self.is_mortgaged:
             return 0
         self.is_mortgaged = True
-        return self.price // 2
+        return self.mortgage_value
 
     def unmortgage(self):
         """
@@ -53,7 +52,7 @@ class Property:
         if not self.is_mortgaged:
             return 0
         else:
-            cost = int((self.price // 2) * 1.1)
+            cost = int(self.mortgage_value * 1.1)
             self.is_mortgaged = False
             return cost
 
