@@ -13,6 +13,9 @@ def get_player_names():
 
 
 def main():
+    """ This is the main function.
+    it calls get_player_names function
+    and handle errors which can occur during game setup. """
     names = get_player_names()
     try:
         game = Game(names)
