@@ -22,6 +22,7 @@ from moneypoly import ui
 
 # pylint: disable=too-many-instance-attributes
 
+
 class Game:
     """Manages the full state and flow of a MoneyPoly game session."""
 
