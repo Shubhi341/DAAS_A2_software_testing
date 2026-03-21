@@ -2,7 +2,7 @@
 including turns, movement, properties, bank, cards,
 and finding the winner"""
 
-import os
+#import os
 
 from moneypoly.config import (
     GO_TO_JAIL_POSITION,
