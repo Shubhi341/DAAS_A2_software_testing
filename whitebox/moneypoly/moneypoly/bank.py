@@ -1,3 +1,5 @@
+""" This module manages bank operations like collecting, paying, and tracking loans in the game."""
+
 import math
 from moneypoly.config import BANK_STARTING_FUNDS
 
