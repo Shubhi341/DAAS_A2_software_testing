@@ -1,3 +1,6 @@
+""" This module is storing all the game cards
+and providing a system to draw, shuffle,
+and manage them like a real deck cards ."""
 
 import random
 
