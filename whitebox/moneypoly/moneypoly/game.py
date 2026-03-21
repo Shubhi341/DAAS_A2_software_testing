@@ -297,6 +297,7 @@ class Game:
             roll = self.dice.roll()
             print(f"  {player.name} rolled: {self.dice.describe()}")
             self._move_and_resolve(player, roll)
+    # pylint: disable=too-many-branches,too-many-statements
 
     def _apply_card(self, player, card):
         """Apply the effect of a drawn Chance or Community Chest card."""
