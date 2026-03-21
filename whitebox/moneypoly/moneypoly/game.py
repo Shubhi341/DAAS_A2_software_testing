@@ -385,8 +385,8 @@ class Game:
 
         winner = self.find_winner()
         if winner:
-            ui.print_banner(f"GAME OVER")
-            print(f"\n  {winner.name} wins with a net worth of ${winner.net_worth()}!\n")
+            ui.print_banner("GAME OVER")
+            print("\n  {winner.name} wins with a net worth of ${winner.net_worth()}!\n")
         else:
             print("\n  The game ended with no players remaining.")
 
