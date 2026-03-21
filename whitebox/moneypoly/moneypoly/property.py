@@ -1,4 +1,6 @@
-"""This module manages properties which can be bought, their rents, ownership, mortgages, and color groups in the game. """
+"""This module manages properties which can be bought,
+their rents, ownership, mortgages
+, and color groups in the game. """
 
 
 class Property:
