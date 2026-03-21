@@ -2,6 +2,7 @@
 , their rents, ownership, mortgages,
 and color groups in the game. """
 
+
 # pylint: disable=too-many-instance-attributes
 class Property:
     """Represents a single purchasable property tile on the MoneyPoly board."""
