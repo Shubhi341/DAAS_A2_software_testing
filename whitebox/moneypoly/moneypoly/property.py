@@ -43,7 +43,7 @@ class Property:
         if self.is_mortgaged:
             return 0
         self.is_mortgaged = True
-        return self.price
+        return self.price // 2
 
     def unmortgage(self):
         """
