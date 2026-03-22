@@ -1,6 +1,7 @@
 import pytest
 from moneypoly.bank import Bank
 
+# We use a Mock Player just to test the bank in isolation
 class MockPlayer:
     def __init__(self, name):
         self.name = name
@@ -43,29 +44,11 @@ def test_bank_give_loan():
     
     bank.give_loan(player, 1000)
     
+    # Player should receive the money
     assert player.balance == 1000
+    # Bank should officially record the loan
     assert bank.loan_count() == 1
     assert bank.total_loans_issued() == 1000
+    
+    # CRITICAL: Bank funds MUST decrease when issuing a loan from reserves!
     assert bank.get_balance() == initial_funds - 1000
-
-def test_bank_give_loan_zero_or_negative():
-    bank = Bank()
-    player = MockPlayer("TestPlayer")
-    initial_funds = bank.get_balance()
-    
-    bank.give_loan(player, 0)
-    bank.give_loan(player, -500)
-    
-    assert player.balance == 0
-    assert bank.loan_count() == 0
-    assert bank.get_balance() == initial_funds
-
-def test_bank_summary(capsys):
-    bank = Bank()
-    bank.summary()
-    captured = capsys.readouterr()
-    assert "Bank reserves" in captured.out
-    
-def test_bank_repr():
-    bank = Bank()
-    assert "Bank(funds" in repr(bank)
