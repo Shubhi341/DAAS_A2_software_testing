@@ -20,9 +20,6 @@ from moneypoly.dice import Dice
 from moneypoly.cards import CardDeck, CHANCE_CARDS, COMMUNITY_CHEST_CARDS
 from moneypoly import ui
 
-# pylint: disable=too-many-instance-attributes
-
-
 class Game:
     """Manages the full state and flow of a MoneyPoly game session."""
 
@@ -33,9 +30,10 @@ class Game:
         self.players = [Player(name) for name in player_names]
         self.current_index = 0
         self.turn_number = 0
-        self.running = True
-        self.chance_deck = CardDeck(CHANCE_CARDS)
-        self.community_deck = CardDeck(COMMUNITY_CHEST_CARDS)
+        self.decks = {
+            "chance": CardDeck(CHANCE_CARDS),
+            "community_chest": CardDeck(COMMUNITY_CHEST_CARDS)
+        }
 
     def current_player(self):
         """Return the Player whose turn it currently is."""
@@ -102,11 +100,11 @@ class Game:
             print(f"  {player.name} rests on Free Parking. Nothing happens.")
 
         elif tile == "chance":
-            card = self.chance_deck.draw()
+            card = self.decks["chance"].draw()
             self._apply_card(player, card)
 
         elif tile == "community_chest":
-            card = self.community_deck.draw()
+            card = self.decks["community_chest"].draw()
             self._apply_card(player, card)
 
         elif tile == "railroad":
@@ -376,7 +374,7 @@ class Game:
         for p in self.players:
             print(f"  {p.name} starts with ${p.balance}.")
 
-        while self.running and self.turn_number < MAX_TURNS:
+        while self.turn_number < MAX_TURNS:
             if len(self.players) <= 1:
                 break
             self.play_turn()
