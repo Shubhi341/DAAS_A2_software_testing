@@ -16,6 +16,10 @@ class Property:
         self.owner = None
         self.is_mortgaged = False
         self.group = None
+    @property
+    def mortgage_value(self):
+        """Calculate and return the mortgage value dynamically."""
+        return self.price // 2
         #self.houses = 0
 
         # Register with the group immediately on creation
