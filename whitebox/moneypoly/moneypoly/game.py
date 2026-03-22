@@ -286,7 +286,6 @@ class Game:
         # Serve the turn
         player.jail_turns += 1
         if player.jail_turns >= 3:
-            # Mandatory release after 3 turns
             print(f"  {player.name} must leave jail. Paying mandatory ${JAIL_FINE} fine.")
             player.deduct_money(JAIL_FINE)
             self.bank.collect(JAIL_FINE)
@@ -305,14 +304,13 @@ class Game:
         action = card["action"]
         value = card["value"]
 
-        # Map string actions directly to helper functions!
         dispatch = {
             "collect": self._card_collect,
             "pay": self._card_pay,
             "jail": self._card_jail,
             "jail_free": self._card_jail_free,
             "move_to": self._card_move_to,
-            "birthday": self._card_collect_from_all, # Both of these do the exact same thing!
+            "birthday": self._card_collect_from_all,
             "collect_from_all": self._card_collect_from_all
         }
 
@@ -360,7 +358,7 @@ class Game:
         """Eliminate `player` from the game if they are bankrupt."""
         if player.is_bankrupt():
             print(f"\n  *** {player.name} is bankrupt and has been eliminated! ***")
-            player.is_eliminated = True
+
             # Release all properties back to the bank
             for prop in list(player.properties):
                 prop.owner = None
