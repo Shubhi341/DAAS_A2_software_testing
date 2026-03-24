@@ -34,6 +34,6 @@ my Github link:
 https://github.com/Shubhi341/DAAS_A2_software_testing
 
 my drive link to the zip:
-https://drive.google.com/file/d/1dA5l3eTlPOs2KbumTbJJYNZggYly9MtQ/view?usp=sharing
+https://drive.google.com/file/d/1a2zaATxtRMdTbpnx_jvMHt1A6USs_nHt/view?usp=sharing
 
 
